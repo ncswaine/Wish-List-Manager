@@ -17,7 +17,10 @@ namespace WishListManager.Controllers
         // GET: wishlist_item
         public ActionResult Index()
         {
-            var wishlist_item = db.wishlist_item.Include(w => w.person);
+            var wishlist_item = from m in db.wishlist_item
+                                where m.is_deleted == false
+                                select m;
+                                db.wishlist_item.Include(w => w.person);
             return View(wishlist_item.ToList());
         }
 

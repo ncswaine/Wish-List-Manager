@@ -8,10 +8,18 @@
 <h2>Details</h2>
 
 <div>
-    <h4>wishlist_item</h4>
+    <h4>Wishlist Item</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.person.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.person.name)
+        </dd>
+
+         <dt>
             @Html.DisplayNameFor(model => model.description)
         </dt>
 
@@ -35,21 +43,15 @@
             @Html.DisplayFor(model => model.is_purchased)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.is_deleted)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.is_deleted)
-        </dd>
+        </dd>*@
 
-        <dt>
-            @Html.DisplayNameFor(model => model.person.name)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.person.name)
-        </dd>
 
     </dl>
 </div>
