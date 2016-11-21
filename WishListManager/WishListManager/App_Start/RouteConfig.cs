@@ -13,10 +13,16 @@ namespace WishListManager
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    name: "wishlist_manager",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "wishlist_item", action = "Index", id = UrlParameter.Optional }
+            //);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "wishlist_item", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
