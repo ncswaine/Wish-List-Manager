@@ -158,7 +158,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequirementsController.cs" />
     <Compile Include="Controllers\wishlist_itemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,6 +243,7 @@
     <Content Include="Views\wishlist_item\Details.cshtml" />
     <Content Include="Views\wishlist_item\Edit.cshtml" />
     <Content Include="Views\wishlist_item\Index.cshtml" />
+    <Content Include="Views\Requirements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

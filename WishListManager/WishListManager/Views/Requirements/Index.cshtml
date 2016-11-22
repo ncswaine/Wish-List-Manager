@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "RequirementsDocument";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Wish List Manager Functional Requirements</h1>
+<p>This document contains the functional requirements for the Wish List Manager application.</p>
+<h2>General Requirements</h2>
+<p>This section contains the general requirements. </p>
+<ul>
+    <li>The system shall utilize soft deletes wherever possible.</li>
+    <li>The system shall associate an individual person to a wish list item for tracking purposes.</li>
+</ul>
+<h2>Wish List</h2>
+<p>The Wish List page provides the current status for wish list items. The following elements will be present:</p>
+<ul>
+    <li>Add New Item:  A button to navigate to the Add New Item page.</li>
+    <li>Arcadia: A table containing the current wish list items for Arcadia.</li>
+    <li>Meredith: A table containing the current wish list items for Meredith.</li>
+    <li>Nick: A table containing the current wish list items for Nick.</li>
+</ul>
+<p>The tables shall contain the following columns:</p>
+<ul>
+    <li>Description: A link to the Item Details page.</li>
+    <li>Type</li>
+    <li>Action: Edit/Delete</li>
+</ul>
+<h3>Business Rules</h3>
+<ul>
+    <li>The system shall display the Wish List table for each person in the system.</li>
+    <li>The system shall navigate to the Add New Item page when the user clicks Add New Item.</li>
+    <li>The system shall navigate to the Item Details when the user clicks the Description.</li>
+    <li>The system shall navigate to the Edit Item page when the user clicks the Edit action link.</li>
+    <li>The system shall navigate to the Delete Item page when the user clicks the Delete action link.</li>
+</ul>
+<h2>Add New Item</h2>
+<p>The Add New Item page will provide a form to enter new items to the wish list. The following elements will be present:</p>
+<ul>
+    <li>Person: Drop down containing the list of people. Accepts user selection of a person.</li>
+    <li>Description: Accepts user entry of description.</li>
+    <li>Type: Accepts user entry of type.</li>
+    <li>Purchased: Checkbox designating whether the item has been purchased. Default not selected.</li>
+    <li>Add: Submits user request to add the item.</li>
+    <li>Cancel: Submits user request to cancel the add.</li>
+</ul>
+<h3>Business Rules</h3>
+<ul>
+    <li>
+        The system shall require the following fields when adding a new item:
+        <ul>
+            <li>Person</li>
+            <li>Description</li>
+        </ul>
+    </li>
+    <li>The system shall add the new item and navigate to the Item Details page when the user clicks Add and no issues are found.</li>
+    <li>The system shall discard unsaved changes and navigate to the Wish List page when the user clicks Cancel.</li>
+</ul>
+<h2>Edit Item</h2>
+<p>The Edit Item page will provide a form to modify existing items. The following elements will be present:</p>
+<ul>
+    <li>Person: Drop down containing the list of people. Accepts user selection of a person. This will be disabled.</li>
+    <li>Description: Accepts user entry of description.</li>
+    <li>Type: Accepts user entry of type.</li>
+    <li>Purchased: Checkbox designating whether the item has been purchased. Default not selected.</li>
+    <li>Save: Submits user request to save the item.</li>
+    <li>Cancel: Submits user request to discard unsaved changes.</li>
+</ul>
+<h3>Business Rules</h3>
+<ul>
+    <li>
+        The system shall require the following fields when editing an item:
+        <ul>
+            <li>Person</li>
+            <li>Description</li>
+        </ul>
+    </li>
+    <li>The system shall save changes and navigate to the Wish List page when the user clicks Save and no issues are found.</li>
+    <li>The system shall discard unsaved changes and navigate to the Item Details page when the user clicks Cancel.</li>
+</ul>
+<h2>Item Details</h2>
+<p>The Item Details page will present the Wish List Item's details. The following elements will be present:</p>
+<ul>
+    <li>Person</li>
+    <li>Description</li>
+    <li>Type</li>
+    <li>Purchased</li>
+    <li>Edit: Submits user request to edit the item.</li>
+    <li>Delete: Submits user request to delete the item.</li>
+    <li>Back to List: Submits user request to return to the Wish List page</li>
+</ul>
+<h3>Business Rules</h3>
+<ul>
+    <li>The system shall navigate to the Wish List page when the user clicks Back to List.</li>
+    <li>The system shall </li>
+</ul>
+
