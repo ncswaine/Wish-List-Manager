@@ -238,7 +238,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\wishlist_item\Create.cshtml" />
+    <Content Include="Views\wishlist_item\Add.cshtml" />
     <Content Include="Views\wishlist_item\Delete.cshtml" />
     <Content Include="Views\wishlist_item\Details.cshtml" />
     <Content Include="Views\wishlist_item\Edit.cshtml" />

@@ -16,6 +16,8 @@ namespace WishListManager.Models
     public partial class wishlist_item
     {
         public int id { get; set; }
+
+        [Display(Name ="Name")]
         public int person_id { get; set; }
 
         [Display(Name = "Description")]

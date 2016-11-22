@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.btn-default:hover,
+.btn-default:active {
+    text-decoration:none !important;
+}
+
+.isbutton:active,
+.isbutton:hover {
+    text-decoration:none !important;
+}

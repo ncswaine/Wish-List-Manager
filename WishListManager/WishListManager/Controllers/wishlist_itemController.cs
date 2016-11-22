@@ -42,25 +42,25 @@ namespace WishListManager.Controllers
             return View(wishlist_item);
         }
 
-        // GET: wishlist_item/Create
-        public ActionResult Create()
+        // GET: wishlist_item/Add
+        public ActionResult Add()
         {
             ViewBag.person_id = new SelectList(db.people, "id", "name");
             return View();
         }
 
-        // POST: wishlist_item/Create
+        // POST: wishlist_item/Add
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,person_id,description,type,is_purchased,is_deleted")] wishlist_item wishlist_item)
+        public ActionResult Add([Bind(Include = "id,person_id,description,type,is_purchased,is_deleted")] wishlist_item wishlist_item)
         {
             if (ModelState.IsValid)
             {
                 db.wishlist_item.Add(wishlist_item);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details",new {id = wishlist_item.id});
             }
 
             ViewBag.person_id = new SelectList(db.people, "id", "name", wishlist_item.person_id);
@@ -94,7 +94,7 @@ namespace WishListManager.Controllers
             {
                 db.Entry(wishlist_item).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = wishlist_item.id });
             }
             ViewBag.person_id = new SelectList(db.people, "id", "name", wishlist_item.person_id);
             return View(wishlist_item);
@@ -120,12 +120,14 @@ namespace WishListManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            
             wishlist_item wishlist_item = db.wishlist_item.Find(id);
-            db.wishlist_item.Remove(wishlist_item);
+            //db.wishlist_item.Remove(wishlist_item);
+            wishlist_item.is_deleted = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+                
         protected override void Dispose(bool disposing)
         {
             if (disposing)
