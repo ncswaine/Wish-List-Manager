@@ -18,7 +18,11 @@
                 </button>
                 @Html.ActionLink("Wishlist Manager", "Index", "wishlist_item", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Requirements Document", "Index", "Requirements")</li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="container body-content">

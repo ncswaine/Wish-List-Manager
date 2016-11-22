@@ -11,13 +11,20 @@ namespace WishListManager.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class wishlist_item
     {
         public int id { get; set; }
         public int person_id { get; set; }
-        public string description { get; set; }
+
+        [Display(Name = "Description")]
+        public string description { get; set; }   
+        
+        [Display(Name = "Type")]     
         public string type { get; set; }
+
+        [Display(Name = "Purchased?")]
         public bool is_purchased { get; set; }
         public bool is_deleted { get; set; }
     
