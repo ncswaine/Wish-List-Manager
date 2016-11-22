@@ -23,6 +23,7 @@ namespace WishListManager.Controllers
                                 orderby m.person.name
                                 select m;
             db.wishlist_item.Include(w => w.person);
+            ViewBag.deleteSuccess = TempData["deleteSuccess"];
 
             return View(wishlist_item.ToList());
         }
@@ -35,6 +36,8 @@ namespace WishListManager.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             wishlist_item wishlist_item = db.wishlist_item.Find(id);
+            ViewBag.addSuccess = TempData["addSuccess"];
+            ViewBag.editSuccess = TempData["editSuccess"];
             if (wishlist_item == null)
             {
                 return HttpNotFound();
@@ -58,8 +61,10 @@ namespace WishListManager.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.wishlist_item.Add(wishlist_item);
                 db.SaveChanges();
+                TempData["addSuccess"] = true;
                 return RedirectToAction("Details",new {id = wishlist_item.id});
             }
 
@@ -94,6 +99,7 @@ namespace WishListManager.Controllers
             {
                 db.Entry(wishlist_item).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["editSuccess"] = true;
                 return RedirectToAction("Details", new { id = wishlist_item.id });
             }
             ViewBag.person_id = new SelectList(db.people, "id", "name", wishlist_item.person_id);
@@ -125,6 +131,7 @@ namespace WishListManager.Controllers
             //db.wishlist_item.Remove(wishlist_item);
             wishlist_item.is_deleted = true;
             db.SaveChanges();
+            TempData["deleteSuccess"] = true;
             return RedirectToAction("Index");
         }
                 

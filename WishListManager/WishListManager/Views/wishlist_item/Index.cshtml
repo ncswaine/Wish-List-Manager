@@ -5,6 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@if (ViewBag.deleteSuccess == true)
+{
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Success!</strong> The wish list item was deleted successfully.
+    </div>
+}
+
 <h2>Wish Lists</h2>
 
 <a href="/wishlist_item/Add" class="isbutton">
