@@ -10,57 +10,49 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @*@Html.DisplayNameFor(model => model.person.name)*@
-            Name
-        </th>
 
-        <th>
-            @*@Html.DisplayNameFor(model => model.description)*@
-            Description
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.type)*@
-            Type
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.is_purchased)*@
-            Purchased?
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.is_deleted)
-        </th>*@
+@foreach (var personGroup in Model.Select(i => i.person.name).Distinct().ToList())
+{
 
-        <th></th>
-    </tr>
+    <h3>@personGroup</h3>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.person.name)
-        </td>
+    <table class="table">
+        <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Purchased?
+            </th>
+            <th>
+                Action
+            </th>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.is_purchased)
-        </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.is_deleted)
-        </td>*@
+            <th></th>
+        </tr>
 
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
+    @foreach (var item in Model.Where( i => i.person.name == personGroup).ToList())
+    {
+        <tr>
+            <td>
+                @Html.ActionLink((string)item.description, "Details", new { id = item.id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.is_purchased)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+    </table>
+
+
 }
-
-</table>
