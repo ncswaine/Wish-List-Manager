@@ -159,7 +159,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\RequirementsController.cs" />
-    <Compile Include="Controllers\wishlist_itemController.cs" />
+    <Compile Include="Controllers\WishlistItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,11 +239,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\wishlist_item\Add.cshtml" />
-    <Content Include="Views\wishlist_item\Delete.cshtml" />
-    <Content Include="Views\wishlist_item\Details.cshtml" />
-    <Content Include="Views\wishlist_item\Edit.cshtml" />
-    <Content Include="Views\wishlist_item\Index.cshtml" />
+    <Content Include="Views\WishlistItem\Add.cshtml" />
+    <Content Include="Views\WishlistItem\Delete.cshtml" />
+    <Content Include="Views\WishlistItem\Details.cshtml" />
+    <Content Include="Views\WishlistItem\Edit.cshtml" />
+    <Content Include="Views\WishlistItem\Index.cshtml" />
     <Content Include="Views\Requirements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

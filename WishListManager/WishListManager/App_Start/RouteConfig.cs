@@ -22,7 +22,7 @@ namespace WishListManager
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "wishlist_item", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "WishlistItem", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
