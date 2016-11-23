@@ -48,7 +48,7 @@ namespace WishListManager.Controllers
         // GET: wishlist_item/Add
         public ActionResult Add()
         {
-            ViewBag.person_id = new SelectList(db.people, "id", "name");
+            ViewBag.person_id = new SelectList(db.people.OrderBy(x => x.name), "id", "name");
             return View();
         }
 
@@ -68,7 +68,7 @@ namespace WishListManager.Controllers
                 return RedirectToAction("Details",new {id = wishlist_item.id});
             }
 
-            ViewBag.person_id = new SelectList(db.people, "id", "name", wishlist_item.person_id);
+            ViewBag.person_id = new SelectList(db.people.OrderBy(x => x.name), "id", "name", wishlist_item.person_id);
             return View(wishlist_item);
         }
 
@@ -84,7 +84,8 @@ namespace WishListManager.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.person_id = new SelectList(db.people, "id", "name", wishlist_item.person_id);
+            ViewBag.person_id = new SelectList(db.people.OrderBy(x => x.name), "id", "name", wishlist_item.person_id);
+             
             return View(wishlist_item);
         }
 
@@ -102,7 +103,7 @@ namespace WishListManager.Controllers
                 TempData["editSuccess"] = true;
                 return RedirectToAction("Details", new { id = wishlist_item.id });
             }
-            ViewBag.person_id = new SelectList(db.people, "id", "name", wishlist_item.person_id);
+            ViewBag.person_id = new SelectList(db.people.OrderBy(x => x.name), "id", "name", wishlist_item.person_id);
             return View(wishlist_item);
         }
 
