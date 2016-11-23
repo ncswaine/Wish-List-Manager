@@ -10,7 +10,7 @@ using WishListManager.Models;
 
 namespace WishListManager.Controllers
 {
-    public class wishlist_itemController : Controller
+    public class WishlistItemController : Controller
     {
         private WishlistManagerEntities db = new WishlistManagerEntities();
 
