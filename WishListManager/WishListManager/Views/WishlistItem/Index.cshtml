@@ -28,16 +28,16 @@
 
     <table class="table">
         <tr>
-            <th>
+            <th class="col-lg-5">
                 @Html.DisplayNameFor(model => model.description)
             </th>
-            <th>
+            <th class="col-lg-3">
                 @Html.DisplayNameFor(model => model.type)
             </th>
-            <th>
+            <th class="col-lg-1">
                 @Html.DisplayNameFor(model => model.is_purchased)
             </th>
-            <th>
+            <th class="col-lg-2">
                 Action
             </th>
 
@@ -53,7 +53,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.type)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.is_purchased)
             </td>
             <td>

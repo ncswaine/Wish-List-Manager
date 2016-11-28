@@ -22,7 +22,7 @@ namespace WishListManager.Models
         public int person_id { get; set; }
 
         [Required(ErrorMessage ="Please enter a description.")]
-        [StringLength(200, MinimumLength = 2, ErrorMessage ="Description must between 2 and 200 characters in length.")]
+        [StringLength(200,ErrorMessage ="Description cannot exceed 200 characters.")]
         [Display(Name = "Description")]
         public string description { get; set; }   
         
